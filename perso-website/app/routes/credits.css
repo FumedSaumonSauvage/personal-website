@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Absans';
+    src: url('/fonts/Absans-Regular.woff') format('woff'), 
+         url('/fonts/Absans-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Swiza';
+    src: url('/fonts/swiza-medium-webfont.eot');
+    src: url('/fonts/swiza-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/swiza-medium-webfont.woff') format('woff'), 
+         url('/fonts/swiza-medium-webfont.woff2') format('woff2'),
+         url('/fonts/swiza-medium-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .absans-font{
+    font-family: 'Absans', sans-serif;
+  }
+
+  .swiza-font{
+    font-family: 'Swiza', sans-serif;
+  }
+  
+  .credits-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .fonts-credits h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    font-family: 'Absans', sans-serif;
+  }
+  
+  .fonts-credits ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .fonts-credits li {
+    margin-bottom: 15px;
+  }
+  
+  .fonts-credits strong {
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .fonts-credits a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  .fonts-credits a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Styles pour les autres sections (images, etc.) si vous les utilisez */
