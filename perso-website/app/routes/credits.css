@@ -1,68 +1,102 @@
 @font-face {
-    font-family: 'Absans';
-    src: url('/fonts/Absans-Regular.woff') format('woff'), 
-         url('/fonts/Absans-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-  }
+  font-family: 'Absans';
+  src: url('/fonts/Absans-Regular.woff') format('woff'),
+       url('/fonts/Absans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-    font-family: 'Swiza';
-    src: url('/fonts/swiza-medium-webfont.eot');
-    src: url('/fonts/swiza-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/swiza-medium-webfont.woff') format('woff'), 
-         url('/fonts/swiza-medium-webfont.woff2') format('woff2'),
-         url('/fonts/swiza-medium-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: 'Swiza';
+  src: url('/fonts/swiza-medium-webfont.eot');
+  src: url('/fonts/swiza-medium-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/swiza-medium-webfont.woff') format('woff'),
+       url('/fonts/swiza-medium-webfont.woff2') format('woff2'),
+       url('/fonts/swiza-medium-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  .absans-font{
-    font-family: 'Absans', sans-serif;
-  }
+.credits-modal {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: auto;
+  background-color: #f8f8f8;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1010;
+  transition: bottom 0.3s ease-in-out;
+  overflow-y: auto;
+}
 
-  .swiza-font{
-    font-family: 'Swiza', sans-serif;
-  }
-  
-  .credits-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .fonts-credits h2 {
-    font-size: 1.8em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-    font-family: 'Absans', sans-serif;
-  }
-  
-  .fonts-credits ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .fonts-credits li {
-    margin-bottom: 15px;
-  }
-  
-  .fonts-credits strong {
-    font-weight: bold;
-    font-size: 1.1em;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .fonts-credits a {
-    color: blue;
-    text-decoration: none;
-  }
-  
-  .fonts-credits a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Styles pour les autres sections (images, etc.) si vous les utilisez */
+.credits-modal.open {
+  bottom: 0;
+}
+
+.credits-modal-content {
+  padding: 20px;
+}
+
+.absans-font {
+  font-family: 'Absans', sans-serif;
+}
+
+.swiza-font {
+  font-family: 'Swiza', sans-serif;
+}
+
+
+.credits-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333; 
+  font-family: 'Absans', sans-serif; 
+}
+
+.fonts-credits {
+  background-color: #eff5da; /* Couleur de fond des projets */
+  border-radius: 10px; /* Bordures arrondies des projets */
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère des projets */
+  margin-bottom: 20px;
+}
+
+.fonts-credits h2 {
+  font-size: 1.8em;
+  margin-top: 0; 
+  margin-bottom: 15px;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e0e0e0;
+  font-family: 'Absans', sans-serif;
+}
+
+.fonts-credits ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.fonts-credits li {
+  margin-bottom: 15px;
+  font-family: 'Absans', sans-serif; /* Police du texte courant des projets */
+  color: #555; /* Couleur du texte courant des projets */
+}
+
+.fonts-credits strong {
+  font-weight: bold;
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 5px;
+  color: #333; /* Couleur du texte important des projets */
+}
+
+.fonts-credits a {
+  color: #007bff; /* Couleur des liens, un bleu standard */
+  text-decoration: none;
+}
+
+.fonts-credits a:hover {
+  text-decoration: underline;
+}

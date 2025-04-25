@@ -11,16 +11,16 @@ const projectData = [
     name: 'This Website',
     description: 'Simple, efficient. You are here.',
     technologies: ['React', 'Node.js'],
-    // imageUrl: '/images/alpha.png',
+    // imageUrl: '/project_alpha.png',
     // liveUrl: 'https://alpha.example.com',
-    // githubUrl: 'https://github.com/user/alpha',
+    githubUrl: 'https://github.com/FumedSaumonSauvage/personal-website',
   },
   {
     id: 'CMScraper',
     name: 'CMScraper',
     description: 'Facebook polls scraper based on a computer vision neural network to interact with the page it\'s looking at, with the goal of doing nice statistics on votes. Ongoing project.',
     technologies: ['Python', 'YOLO', 'OpenCV'],
-    // imageUrl: '/images/beta.png',
+    imageUrl: '/projects_images/cmscraper.png',
     // liveUrl: 'https://beta.example.com',
     githubUrl: 'https://github.com/FumedSaumonSauvage/CMScraper',
   },
@@ -29,7 +29,9 @@ const projectData = [
     name: 'MicroFDM',
     description: 'A 3D printer, 3D printed. Working, janky and was built with no other purpose than having something to do with some obsolete Ender parts. I call it a proof of concept.',
     technologies: ['3D printing', 'FDM', 'Fusion360', 'Marlin'],
+    imageUrl: '/projects_images/microfdm.png',
     githubUrl: 'https://github.com/FumedSaumonSauvage/MicroFDM',
+    youtubeUrl: 'https://www.youtube.com/watch?v=Q9CDN-cGSXc',
   }
   // Add more projects here
 ];
@@ -52,6 +54,8 @@ function HomePage() {
         clearInterval(intervalId);
       }
     }, 150);
+
+    document.title = 'Home | Simon Hergott';
 
     return () => clearInterval(intervalId);
   }, []);
@@ -95,8 +99,7 @@ function HomePage() {
       {isCreditsModalOpen && (
         <div className="overlay" onClick={closeCreditsModal} />
       )}
-      <div className={`homepage ${isProjectsModalOpen ? 'blurred' : ''}`}>
-        <div className="words-container">
+    <div className={`homepage ${isProjectsModalOpen || isCreditsModalOpen || isContactModalOpen || isLegalModalOpen ? 'blurred' : ''}`}>        <div className="words-container">
           {visibleWords.map((word, index) => (
             <span
               key={index}
