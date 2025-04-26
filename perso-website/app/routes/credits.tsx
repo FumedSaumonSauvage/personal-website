@@ -8,20 +8,20 @@ function CreditsPage() {
   }, []);
 
   return (
-    <div className="credits-container">
+    <div className="credits-modal-content">
       <h1 className="credits-title">Credits</h1>
-      <div className="fonts-credits"> {/* Ajout de cette div */}
+      <div className="fonts-credits">
         <h2>Fonts</h2>
         <ul>
           <li>
-            <p className="absans-font"> Absans by Collletttivo</p>
+            <p className="absans-font">Absans by Collletttivo</p>
           </li>
           <li>
-            <p className="swiza-font"> Swiza by Atipo</p>
+            <p className="swiza-font">Swiza by Atipo</p>
           </li>
         </ul>
       </div>
-   </div>
+    </div>
   );
 }
 

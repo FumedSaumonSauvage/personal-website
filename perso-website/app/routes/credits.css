@@ -1,3 +1,9 @@
+/**
+  * credits.css
+  * 
+  * Attention, ce fichier est utilisé pour le modal des crédits, des mentions légales et de Contact.
+  */
+
 @font-face {
   font-family: 'Absans';
   src: url('/fonts/Absans-Regular.woff') format('woff'),
@@ -22,12 +28,14 @@
   left: 0;
   bottom: -100%;
   width: 100%;
-  height: auto;
-  background-color: #f8f8f8;
+  height: 80%; /* Ajustez la hauteur pour correspondre à celle de projets */
+  background-color: #e7f1c3;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1010;
   transition: bottom 0.3s ease-in-out;
   overflow-y: auto;
+  display: flex; /* Ajouté pour aligner le contenu */
+  flex-direction: column; /* Ajouté pour aligner le contenu */
 }
 
 .credits-modal.open {

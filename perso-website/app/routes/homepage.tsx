@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import './homepage.css';
 import Projets from './projets';
 import Credits from './credits';
+import Legal from './legal';
+import Contact from './contact';
 
 const words = ["Simon Hergott", "Linkedin", "LinkedIn", "Github", "Projects", "Curriculum Vitae", "Contact", "Credits", "Legal"];
 
@@ -11,8 +13,6 @@ const projectData = [
     name: 'This Website',
     description: 'Simple, efficient. You are here.',
     technologies: ['React', 'Node.js'],
-    // imageUrl: '/project_alpha.png',
-    // liveUrl: 'https://alpha.example.com',
     githubUrl: 'https://github.com/FumedSaumonSauvage/personal-website',
   },
   {
@@ -21,7 +21,6 @@ const projectData = [
     description: 'Facebook polls scraper based on a computer vision neural network to interact with the page it\'s looking at, with the goal of doing nice statistics on votes. Ongoing project.',
     technologies: ['Python', 'YOLO', 'OpenCV'],
     imageUrl: '/projects_images/cmscraper.png',
-    // liveUrl: 'https://beta.example.com',
     githubUrl: 'https://github.com/FumedSaumonSauvage/CMScraper',
   },
   {
@@ -33,7 +32,6 @@ const projectData = [
     githubUrl: 'https://github.com/FumedSaumonSauvage/MicroFDM',
     youtubeUrl: 'https://www.youtube.com/watch?v=Q9CDN-cGSXc',
   }
-  // Add more projects here
 ];
 
 function HomePage() {
@@ -44,7 +42,7 @@ function HomePage() {
   const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
 
   useEffect(() => {
-    document.title = 'Simon Hergott'
+    document.title = 'Simon Hergott';
     let index = 0;
     const intervalId = setInterval(() => {
       if (index < words.length) {
@@ -63,7 +61,7 @@ function HomePage() {
   const handleWordClick = (word: string) => {
     if (word === "Github") {
       window.location.href = "https://github.com/FumedSaumonSauvage";
-    } else if (word === "Linkedin") {
+    } else if (word === "LinkedIn") {
       window.location.href = "https://linkedin.com/in/simon-hergott";
     } else if (word === "Projects") {
       setIsProjectsModalOpen(true);
@@ -85,10 +83,22 @@ function HomePage() {
 
   const closeProjectsModal = () => {
     setIsProjectsModalOpen(false);
+    document.title = 'Home | Simon Hergott';
+  };
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+    document.title = 'Home | Simon Hergott';
   };
 
   const closeCreditsModal = () => {
     setIsCreditsModalOpen(false);
+    document.title = 'Home | Simon Hergott';
+  };
+
+  const closeLegalModal = () => {
+    setIsLegalModalOpen(false);
+    document.title = 'Home | Simon Hergott';
   };
 
   return (
@@ -96,10 +106,17 @@ function HomePage() {
       {isProjectsModalOpen && (
         <div className="overlay" onClick={closeProjectsModal} />
       )}
+      {isContactModalOpen && (
+        <div className="overlay" onClick={closeContactModal} />
+      )}
       {isCreditsModalOpen && (
         <div className="overlay" onClick={closeCreditsModal} />
       )}
-    <div className={`homepage ${isProjectsModalOpen || isCreditsModalOpen || isContactModalOpen || isLegalModalOpen ? 'blurred' : ''}`}>        <div className="words-container">
+      {isLegalModalOpen && (
+        <div className="overlay" onClick={closeLegalModal} />
+      )}
+      <div className={`homepage ${isProjectsModalOpen || isCreditsModalOpen || isContactModalOpen || isLegalModalOpen ? 'blurred' : ''}`}>
+        <div className="words-container">
           {visibleWords.map((word, index) => (
             <span
               key={index}
@@ -120,18 +137,20 @@ function HomePage() {
       )}
 
       {isContactModalOpen && (
-        <div className={`contact-modal open`}>
-        <h2 className="modal-content">Contenu à venir!</h2>
-      </div>
+        <div className="credits-modal open">
+          <Contact />
+        </div>
       )}
 
       {isCreditsModalOpen && (
-        <Credits/>
+        <div className="credits-modal open">
+          <Credits />
+        </div>
       )}
-      
+
       {isLegalModalOpen && (
-        <div className={`legal-modal open`}>
-          <h2 className="modal-content">Contenu à venir!</h2>
+        <div className="credits-modal open">
+          <Legal />
         </div>
       )}
     </div>
