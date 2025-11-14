@@ -51,19 +51,24 @@
 }
   
 .large-text {
-    font-size: 7em;
-    color: #232E21;
-    white-space: pre-wrap;
-    line-height: 1; 
-    margin-bottom: 0;
-    font-family: 'Swiza', sans-serif;
-    transition: color 0.2s ease-in-out;
-    }
+  font-size: 7em;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-family: Swiza,sans-serif;
+  color: #232e21;
+  white-space: pre-wrap;
+  transition: color 0.2s;
+}
 
-    .large-text:hover {
-    color: #E75A7C; 
-    cursor: pointer;
-    }
+@media (max-width: 600px) {
+  .large-text {
+    font-size: clamp(1.5rem, 8vw, 2.2rem); /* fixes shitty thin mobile screens */
+  }
+}
+.large-text:hover {
+  color: #E75A7C;
+  cursor: pointer;
+}
 
 .app-container {
     position: relative;
