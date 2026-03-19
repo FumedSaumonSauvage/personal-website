@@ -30,7 +30,7 @@ function LegalPage() {
       <div className="fonts-credits">
         <h2>Données Personnelles</h2>
         <p>
-          Dans le cadre de l'exploitation de ce site, seule des données à des fins statistiques seront collectées.
+          Dans le cadre de l'exploitation de ce site, aucune donnée n'est collectée.
         </p>
       </div>
       <div className="fonts-credits">
