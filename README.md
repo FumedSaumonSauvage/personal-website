@@ -16,5 +16,4 @@ npm run dev
 
 ## Notes pour plus tard
 
-Le docker sert potentiellement à rien, c'est pas fonctionnel. Faut juste pull le code sur les serveur, build avec le docker pour creer le dossier client et copier ce dossier sur /var/www du serveur.
-
+Le docker sert à rien, c'est pas fonctionnel. Faut juste pull le code sur les serveur, build avec npm pour creer le dossier client et copier ce dossier sur /var/www du serveur.
